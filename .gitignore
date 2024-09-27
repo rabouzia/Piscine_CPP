@@ -1,0 +1,11 @@
+*.o
+
+.DS_Store
+
+*.d
+
+Megaphone
+
+*.sSYM
+
+phonebook
