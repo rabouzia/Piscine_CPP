@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/09/27 00:15:12 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/09/27 11:54:37 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 // int ADD();
 
-void print_contacts(char *tab[8])
+/* int SEARCH()
 {
+			
+}
+*/
+
+void	print_contacts(char *tab[8])
+{
+
 	
+		
 }
 
-int main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	phonebook pb;
 	contact c;
@@ -28,7 +36,7 @@ int main (int ac, char **av)
 	
 	while (1)
 	{
-		std::getline(std::cin, input)
+		std::getline(std::cin, input);
 		if(input == "EXIT")
 			break;
 	}	
