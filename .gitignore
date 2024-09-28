@@ -11,3 +11,5 @@ Megaphone
 *.dSYM/
 
 phonebook
+
+.vscode/
