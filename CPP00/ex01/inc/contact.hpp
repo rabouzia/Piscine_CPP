@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:48:37 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/09/27 17:50:37 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/09/28 10:42:26 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 # define PHONEBOOK_HPP
 
 # include "main.hpp"
+#include "phonebook.hpp"
 
-// okoko
-
-// class PhoneBuku
-// {
-// 	char *tab[8];
-// };
 
 class Contacto
 {
@@ -44,5 +39,8 @@ class Contacto
 	std::string GetDarkSecret();
 	int GetNumber();
 };
+
+int	ADD(PhonuBuku *book, std::string input);
+
 
 #endif

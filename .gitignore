@@ -4,8 +4,10 @@
 
 *.d
 
+obj/
+
 Megaphone
 
-*.dSYM
+*.dSYM/
 
 phonebook
