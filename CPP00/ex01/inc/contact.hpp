@@ -3,44 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:48:37 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/09/28 10:42:26 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/09/28 17:40:58 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-# include "main.hpp"
-#include "phonebook.hpp"
+#include "main.hpp"
 
+class PhonuBuku;
 
 class Contacto
 {
-  private:
+private:
 	std::string first_name;
 	std::string last_name;
 	std::string nick_name;
 	std::string dark_secret;
-	int number;
+	std::string number;
 
-  public:
+public:
 	void SetFirstName(std::string fn);
 	void SetLastName(std::string ln);
 	void SetNickName(std::string nn);
 	void SetDarkSecret(std::string ds);
-	void SetNumber(int num);
+	void SetNumber(std::string num);
 
 	std::string GetFirstName();
 	std::string GetLastName();
 	std::string GetNickName();
 	std::string GetDarkSecret();
-	int GetNumber();
+	std::string GetNumber();
+
+	int add(PhonuBuku *book, std::string input);
 };
-
-int	ADD(PhonuBuku *book, std::string input);
-
 
 #endif

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getters.cpp                                        :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:07:38 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/28 17:44:19 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/09/28 16:52:18 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/09/28 17:50:30 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-std::string Contacto::GetFirstName()
+PhonuBuku::PhonuBuku()
 {
-	return (this->first_name);
 }
-std::string Contacto::GetLastName()
+
+void PhonuBuku::add_contact(Contacto contact)
 {
-	return (this->last_name);
-}
-std::string Contacto::GetNickName()
-{
-	return (this->nick_name);
-}
-std::string Contacto::GetDarkSecret()
-{
-	return (this->dark_secret);
-}
-std::string	Contacto::GetNumber(void)
-{
-	return (this->number);
+	contacts[contact_count % 8] = contact;
+	contact_count++;
+	std::cout << contact.GetFirstName() << std::endl;
+	std::cout << contact.GetLastName() << std::endl;
+	std::cout << contact.GetNickName() << std::endl;
+	std::cout << contact.GetDarkSecret() << std::endl;
+	std::cout << contact.GetNumber() << std::endl;
 }

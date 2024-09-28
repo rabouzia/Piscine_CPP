@@ -1,8 +1,8 @@
 NAME       =	phonebook
 
-SRC        =	src/main.cpp 
+SRC        =	src/main.cpp src/phonebook.cpp src/setters.cpp src/getters.cpp
 
-CC 		   =	g++
+CC 		   =	c++
 
 CFLAGS 	   =	-Wall -Wextra -Werror -std=c++98 -I./inc 
 
