@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:07:54 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/28 17:40:32 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:56:09 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,8 @@
 #include "contact.hpp"
 #include "phonebook.hpp"
 
+
+int info_filler(PhonuBuku *book);
+int fill_contact(PhonuBuku *book);
 
 #endif

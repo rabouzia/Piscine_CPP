@@ -6,47 +6,11 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/09/28 17:48:57 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:59:28 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
-
-std::string get_input()
-{
-	std::string input;
-
-	getline(std::cin, input);
-	while ((input).empty())
-	{
-		std::cout << "Input can not be empty";
-		getline(std::cin, input);
-	}
-	return (input);
-}
-
-void add(PhonuBuku *book)
-{
-	Contacto contact;
-
-	std::string input;
-	std::cout << "Please enter your first name: \n";
-	input = get_input();
-	contact.SetFirstName(input);
-	std::cout << "Please enter your last name:\n";
-	input = get_input();
-	contact.SetLastName(input);
-	std::cout << "Please enter your nick name:\n";
-	input = get_input();
-	contact.SetNickName(input);
-	std::cout << "Please enter your darkest secret (its for blackmail):\n";
-	input = get_input();
-	contact.SetDarkSecret(input);
-	std::cout << "Please enter your phone number:\n";
-	input = get_input();
-	contact.SetNumber(input);
-	book->add_contact(contact);
-}
 
 // int	map_book(PhonuBuku *book)
 // {
@@ -63,6 +27,24 @@ void add(PhonuBuku *book)
 // 		return;
 // }
 
+// void print_tab();
+// void print_one();
+
+// bool print_contact(PhonuBuku book)
+// {
+// 	print_tab();
+// 	print_one();
+// }
+
+int input_check(std::string input, PhonuBuku *book)
+{
+	if (input == "ADD")
+		info_filler(book);
+	// if(input == "SEARCH")
+	// 	print_contact();
+	return 1;
+}
+
 int main(void)
 {
 	std::string input;
@@ -72,15 +54,11 @@ int main(void)
 	{
 		std::cout << "What do you wanna do ? : ";
 		std::getline(std::cin, input);
-		if (input == "ADD")
-			add(&book);
-		// if (input == "SEARCH")
-		// 	search(book);
 		if (input == "EXIT")
-		{
-			// delete book;
 			break;
-		}
+		
+		else
+			input_check(input, &book);
 	}
 	return (0);
 }
