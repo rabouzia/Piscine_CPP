@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:18:05 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/30 15:04:25 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:36:52 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,21 @@ std::string get_input()
 int fill_contact(PhonuBuku *book)
 {
 	Contacto contact;
-
+	std::cout << "Please enter your: \n";
 	std::string input;
-	std::cout << "Please enter your first name: \n";
+	std::cout << "First name: \n";
 	input = get_input();
 	contact.SetFirstName(input);
-	std::cout << "Please enter your last name:\n";
+	std::cout << "Last name:\n";
 	input = get_input();
 	contact.SetLastName(input);
-	std::cout << "Please enter your nick name:\n";
+	std::cout << "Nick name:\n";
 	input = get_input();
 	contact.SetNickName(input);
-	std::cout << "Please enter your darkest secret (its for blackmail):\n";
+	std::cout << "Darkest secret (its for blackmail):\n";
 	input = get_input();
 	contact.SetDarkSecret(input);
-	std::cout << "Please enter your phone number:\n";
+	std::cout << "Phone number:\n";
 	input = get_input();
 	contact.SetNumber(input);
 	book->add_contact(contact);

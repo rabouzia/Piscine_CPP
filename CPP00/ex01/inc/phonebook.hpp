@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:01:09 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/30 20:32:13 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:45:49 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	~PhonuBuku();
 	void add_contact(Contacto contact);
 	Contacto get_contact(int index);
+	void display(PhonuBuku pb);
 };
 
 #endif
