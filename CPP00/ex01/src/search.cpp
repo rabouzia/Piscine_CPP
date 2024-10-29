@@ -6,13 +6,13 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:24:23 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/30 18:25:08 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:45:59 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-void 	PhoneBook::display(PhoneBook pb)
+void 	PhonuBuku::display(PhonuBuku pb)
 {
 	int i;
 	int max;
