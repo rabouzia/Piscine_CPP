@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/10/01 18:37:28 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/08 01:22:04 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@
 // 	print_one();
 // }
 
-int input_check(std::string input, PhonuBuku *book)
+int input_check(std::string input, PhonuBuku &book)
 {
 	if (input == "ADD")
 		info_filler(book);
-	if(input == "SEARCH")
-		print_contact();
+	if (input == "SEARCH")
+		book.display();
 	return 1;
 }
 
@@ -57,7 +57,7 @@ int main(void)
 		if (input == "EXIT")
 			break;
 		else
-			input_check(input, &book);
+			input_check(input, book);
 	}
 	return (0);
 }

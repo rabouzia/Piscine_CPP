@@ -6,13 +6,13 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:18:05 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/10/01 18:36:52 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/08 01:21:32 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-int info_filler(PhonuBuku *book)
+int info_filler(PhonuBuku &book)
 {
 	fill_contact(book);
 	return (1);
@@ -31,7 +31,7 @@ std::string get_input()
 	return (input);
 }
 
-int fill_contact(PhonuBuku *book)
+int fill_contact(PhonuBuku &book)
 {
 	Contacto contact;
 	std::cout << "Please enter your: \n";
@@ -51,6 +51,6 @@ int fill_contact(PhonuBuku *book)
 	std::cout << "Phone number:\n";
 	input = get_input();
 	contact.SetNumber(input);
-	book->add_contact(contact);
+	book.add_contact(contact);
 	return 1;
 }

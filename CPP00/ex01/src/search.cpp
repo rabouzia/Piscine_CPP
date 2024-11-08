@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:24:23 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/10/01 18:45:59 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/08 01:22:23 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void 	PhonuBuku::display(PhonuBuku pb)
 	std::string index;
 
 	i = 0;
-	if (pb.contacts[0].isnull(pb.contacts[0]))
+	if (contacts[0].isnull(pb.contacts[0]))
 	{
 		std::cout << "Your Phonebook is empty!!\n";
 		return;
@@ -29,7 +29,7 @@ void 	PhonuBuku::display(PhonuBuku pb)
 	std::cout << "|-------------------------------------------|" << std::endl;
 	while (i < 8)
 	{
-		if (pb.contacts[i].isnull(pb.contacts[i]))
+		if (contacts[i].isnull(contacts[i]))
 			break;
 		std::cout << "|" << std::setw(10) << i << "|";
 		contacts[i].print_info(contacts[i], 1);
@@ -58,7 +58,7 @@ void 	PhonuBuku::display(PhonuBuku pb)
 			std::cout << "Please enter a valid number >:(" << std::endl;
 			continue;
 		}
-		pb.contacts[i].display_complete(pb.contacts[i]);
+		contacts[i].display_complete(contacts[i]);
 		break;
 	}
 }
