@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/08 01:22:04 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/08 23:00:09 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@
 
 int input_check(std::string input, PhonuBuku &book)
 {
-	if (input == "ADD")
-		info_filler(book);
-	if (input == "SEARCH")
-		book.display();
+	(void)input;
+	std::cout << &book << '\n';
+	// if (input == "ADD")
+	// 	info_filler(book);
+	// if (input == "SEARCH")
+	// 	book.display();
 	return 1;
 }
 
