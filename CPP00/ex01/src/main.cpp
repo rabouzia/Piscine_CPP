@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/08 23:00:09 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/09 12:27:50 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,10 @@
 int input_check(std::string input, PhonuBuku &book)
 {
 	(void)input;
-	std::cout << &book << '\n';
-	// if (input == "ADD")
-	// 	info_filler(book);
-	// if (input == "SEARCH")
-	// 	book.display();
+	if (input == "ADD")
+		info_filler(book);
+	if (input == "SEARCH")
+		book.display();
 	return 1;
 }
 
