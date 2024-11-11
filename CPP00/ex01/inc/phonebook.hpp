@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:01:09 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/09 20:04:56 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:21:54 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ public:
 	void add_contact(Contacto contact);
 	Contacto get_contact(int index);
 	void display(PhonuBuku pb);
-	void set_count(int a){
+	void set_count(int a)
+	{
 		contact_count = a;
 	}
-	int get_count(void){
-		return(contact_count);
+	int get_count(void)
+	{
+		return (contact_count);
 	}
 };
 
