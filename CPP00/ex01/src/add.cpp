@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:18:05 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/09 12:46:00 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:52:40 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int info_filler(PhonuBuku &book)
 {
 	fill_contact(book);
-	while(book.contact_count < 9)  		
-		book.contact_count++;	
+	int contact_count = book.get_count();
+	while( contact_count< 9)  		
+		contact_count++;
+	book.set_count(contact_count);	
 	return (1);
 }
 
