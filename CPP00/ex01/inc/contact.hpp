@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:48:37 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/12 13:37:06 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:59:24 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define PHONEBOOK_HPP
 
 #include "main.hpp"
-
-class PhonuBuku;
 
 class Contacto
 {
@@ -39,7 +37,7 @@ public:
 	std::string GetDarkSecret();
 	std::string GetNumber();
 
-	int add(PhonuBuku *book, std::string input);
+	// int add(Buku *book, std::string input);
 };
 
 #endif

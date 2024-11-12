@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:07:54 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/30 14:56:09 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:30:04 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
-
-#include "contact.hpp"
+#include <iomanip>
+#include <string>
 #include "phonebook.hpp"
+#include <stdio.h>
+#include <stdlib.h>
 
 
-int info_filler(PhonuBuku *book);
-int fill_contact(PhonuBuku *book);
+int info_filler(Buku *book);
+int fill_contact(Buku *book);
+std::string get_input();
 
 #endif
