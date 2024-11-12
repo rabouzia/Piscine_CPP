@@ -6,43 +6,74 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 23:41:33 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/11 16:53:43 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:58:01 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
+#include <contact.hpp>
 
-// int	map_book(PhonuBuku *book)
-// {
-// 	if (book[0] == NULL)
-// 		return (0);
-// 	if (book[7] != NULL)
-// 		return (1);
-// 	return (1);
-// }
-
-// void	search(PhonuBuku *book)
-// {
-// 	while ()
-// 		return;
-// }
-
-// void print_tab();
-// void print_one();
-
-// bool print_contact(PhonuBuku book)
-// {
-// 	print_tab();
-// 	print_one();
-// }
-
-int input_check(std::string input, PhonuBuku &book)
+std::string check_word_len(std::string to_check)
 {
-	(void)input;
+	if (to_check.length() >= 10)
+		return (to_check);
+	else
+		return to_check;
+}
+
+// void search(PhonuBuku &book)
+// {
+// 	// int i;
+// 	// i = 0;
+// 	std::cout << "INDEX |First Name|Last Name|Nick Name|" << std::endl;
+// 	for (int i = 0; i < book.contact_count; i++)
+// 		std::cout << i << "|" << book.get_contact(i).GetFirstName() << std::endl;
+// }
+
+std::string get_input()
+{
+	std::string input;
+
+	getline(std::cin, input);
+	while ((input).empty())
+	{
+		std::cout << "Input can not be empty";
+		getline(std::cin, input);
+	}
+	return (input);
+}
+
+void add(std::string input, PhonuBuku &book)
+{
+	Contacto contact;
+	std::cout << "Please enter your: \n";
+	std::cout << "First name: \n";
+	input = get_input();
+	contact.SetFirstName(input);
+	std::cout << "Last name:\n";
+	input = get_input();
+	contact.SetLastName(input);
+	std::cout << "Nick name:\n";
+	input = get_input();
+	contact.SetNickName(input);
+	std::cout << "Darkest secret (its for blackmail):\n";
+	input = get_input();
+	contact.SetDarkSecret(input);
+	std::cout << "Phone number:\n";
+	input = get_input();
+	contact.SetNumber(input);
+	if (book.contact_count < 8)
+		book.contact_count++;
+	std::cout << book.contact_count << std::endl;
+	book.add(contact);
+}
+
+int check(std::string input, PhonuBuku &book)
+{
 	if (input == "ADD")
-		info_filler(book);
+		add(input, book);
 	if (input == "SEARCH")
-		book.display(book);
+		book.search();
 	return 1;
 }
 
@@ -58,7 +89,7 @@ int main(void)
 		if (input == "EXIT")
 			break;
 		else
-			input_check(input, book);
+			check(input, book);
 	}
 	return (0);
 }

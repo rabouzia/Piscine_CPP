@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:07:38 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/28 17:44:19 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:36:56 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ std::string Contacto::GetDarkSecret()
 {
 	return (this->dark_secret);
 }
-std::string	Contacto::GetNumber(void)
+std::string Contacto::GetNumber(void)
 {
 	return (this->number);
 }

@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:01:09 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/11 17:21:54 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:56:34 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ class PhonuBuku
 {
 private:
 	Contacto contacts[8]; // Array to store 8 contacts
-	int contact_count;	  // how may contact are store
 
 public:
+	int contact_count; // how may contact are store
 	PhonuBuku();
 	~PhonuBuku();
-	void add_contact(Contacto contact);
+	void add(Contacto contact);
 	Contacto get_contact(int index);
-	void display(PhonuBuku pb);
+	Contacto display(int i);
+	void search();
 	void set_count(int a)
 	{
 		contact_count = a;
