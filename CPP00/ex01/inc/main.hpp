@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:07:54 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/12 18:30:04 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:32:45 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@
 int info_filler(Buku *book);
 int fill_contact(Buku *book);
 std::string get_input();
+bool safe_getline(std::string *str);
 
 #endif

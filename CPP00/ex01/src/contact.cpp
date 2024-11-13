@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:35:12 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/09/28 17:04:13 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:31:13 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,26 @@ void Contacto::SetDarkSecret(std::string ds)
 void Contacto::SetNumber(std::string num)
 {
 	this->number = num;
+}
+
+
+std::string Contacto::GetFirstName()
+{
+	return (this->first_name);
+}
+std::string Contacto::GetLastName()
+{
+	return (this->last_name);
+}
+std::string Contacto::GetNickName()
+{
+	return (this->nick_name);
+}
+std::string Contacto::GetDarkSecret()
+{
+	return (this->dark_secret);
+}
+std::string Contacto::GetNumber(void)
+{
+	return (this->number);
 }

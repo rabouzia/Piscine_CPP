@@ -1,28 +1,42 @@
-SRC =		megaphone.cpp 			\
+NAME       =    megaphone
 
+SRC        =    src/megaphone.cpp         \
+               
+CC            =    c++
 
-NAME =		Megaphone
+CFLAGS        =    -Wall -Wextra -Werror -std=c++98 -I./inc 
 
-CFLAGS =	-g3 -std=c++98 -Wall -Wextra -Werror -I./inc
+OFLAG     		 =     -MMD -g3
 
-CC =		c++
+OBJ_DIR       =    obj/
 
-OBJ = $(SRC:.c=.o)
+SRCS       =    $(SRC)
 
-all:		$(NAME)
+OBJ        =    $(patsubst src/%.cpp, $(OBJ_DIR)%.o, $(SRCS))
 
-$(NAME): $(OBJ)
-		$(CC) $(CFLAGS) -o $@ $^
+DEP        =    $(patsubst src/%.cpp, $(OBJ_DIR)%.d, $(SRCS))
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+MAKE_DIR   =    mkdir -p
+
+SMAKE       =    make --no-print-directory
+
+all:            $(NAME)
+
+$(NAME):        $(OBJ) $(DEP)
+				@$(CC) $(CFLAGS) $(OFLAG) $(OBJ) -o $@
+                
+$(OBJ_DIR)%.o:  src/%.cpp
+				@mkdir -p $(OBJ_DIR)
+				@$(CC) $(CFLAGS) $(OFLAG) -c $< -o $@
 
 clean:
-		rm -f $(OBJ)
+				@rm -rf $(OBJ_DIR) $(DEP)
+				@echo "\033[1;31m======== mega object files removed ========\033[0m"
 
-fclean: clean
-		rm -f $(NAME)
+fclean:         clean
+				@$(RM) $(NAME)
+				@echo "\033[1;31m======= mega executable removed =======\033[0m"
 
-re: fclean all
+re:             fclean all
 
-.PHONY: clean fclean all re bonus
+.PHONY: clean fclean all re

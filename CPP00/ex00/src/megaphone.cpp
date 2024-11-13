@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getters.cpp                                        :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:07:38 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/12 13:36:56 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/09/26 23:40:05 by ramzerk           #+#    #+#             */
+/*   Updated: 2024/11/13 16:47:14 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.hpp"
+#include <iostream>
+#include <cctype>
 
-std::string Contacto::GetFirstName()
+void megaphone(char **av)
 {
-	return (this->first_name);
+	int i = -1;
+	int j = 0;
+
+	while(av[++i])
+	{	  
+		j = 0;
+		while(av[i][j])
+			std::cout << (char) std::toupper(av[i][j++]);
+	}
 }
-std::string Contacto::GetLastName()
+
+int main (int ac, char ** av)
 {
-	return (this->last_name);
-}
-std::string Contacto::GetNickName()
-{
-	return (this->nick_name);
-}
-std::string Contacto::GetDarkSecret()
-{
-	return (this->dark_secret);
-}
-std::string Contacto::GetNumber(void)
-{
-	return (this->number);
+	(void)av;
+	if (ac < 2)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	else
+		megaphone(av + 1);
+	std::cout << std::endl;
+	return 0;	
 }

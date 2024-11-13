@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:01:09 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/12 18:26:12 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/13 15:14:36 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ public:
 	void add();
 	void get_contact(int index);
 	void search();
-	int get_count(void){
-		return (_contact_count);
-	}
+	int get_count(void);
 };
 
 #endif
