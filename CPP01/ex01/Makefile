@@ -1,11 +1,9 @@
-NAME       =	phonebook
+NAME       =	zombie
 
 SRC        =	src/main.cpp 		\
-				src/phonebook.cpp 	\
-				src/setters.cpp 	\
-				src/getters.cpp		\
-				src/add.cpp			
-
+				src/Zombie.cpp 		\
+				src/zombieHorde.cpp 		\
+		
 CC 		   =	c++
 
 CFLAGS 	   =	-Wall -Wextra -Werror -std=c++98 -I./inc 
@@ -35,11 +33,11 @@ $(OBJ_DIR)%.o:  src/%.cpp
 
 clean:
 				@rm -rf $(OBJ_DIR) $(DEP)
-				@echo "\033[1;31m======== philo object files removed ========\033[0m"
+				@echo "\033[1;31m======== zombie object files removed ========\033[0m"
 
 fclean:         clean
 				@$(RM) $(NAME)
-				@echo "\033[1;31m======= philo executable removed =======\033[0m"
+				@echo "\033[1;31m======= zombie executable removed =======\033[0m"
 
 re:             fclean all
 
