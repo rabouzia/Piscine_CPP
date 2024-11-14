@@ -1,4 +1,4 @@
-NAME       =	phonebook
+NAME       =	zombie
 
 SRC        =	src/main.cpp 		\
 				src/phonebook.cpp 	\
