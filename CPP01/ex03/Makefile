@@ -1,10 +1,11 @@
 NAME       =	phonebook
 
 SRC        =	src/main.cpp 		\
-				src/phonebook.cpp 	\
-				src/setters.cpp 	\
-				src/getters.cpp		\
-				src/add.cpp			
+				src/HumanA.cpp 		\
+				src/HumanB.cpp 		\
+				src/Weapon.cpp 		\
+
+
 
 CC 		   =	c++
 
