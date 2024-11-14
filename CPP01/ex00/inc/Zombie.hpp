@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:22:30 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/14 00:34:18 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/14 12:34:57 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 #include <string>
 #include <iostream>
 
-class Zombie {
-private:
-	std::string _name;
-public:
-	Zombie();
-	~Zombie();
-	void announce();
-	std::string Zombie::getName(void);
+class Zombie
+{
+	private:
+		std::string _name;
 
-
+	public:
+		Zombie();
+		void announce();
+		Zombie *newZombie(std::string name);
+		Zombie(std::string choose_name);
+		~Zombie();
 };
+void randomChump(std::string name);
 
 #endif

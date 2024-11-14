@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:23:31 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/14 00:37:51 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/14 12:31:31 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name) {
-	return new Zombie(name);
+Zombie* newZombie(std::string name)
+{
+	Zombie* zombie = new Zombie(name);
+
+	return (zombie);
 }

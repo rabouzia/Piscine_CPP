@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 00:23:08 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/14 00:41:22 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/14 12:32:25 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie(std::string name)
 {
- std:: cout << ""
+	_name = name;
 }
 
 void Zombie::announce(void){
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-std::string Zombie::getName(void){
-	return (this->_name);
+Zombie::~Zombie()
+{
+	std::cout << _name << ": destroyed 💥" << std::endl;
 }
