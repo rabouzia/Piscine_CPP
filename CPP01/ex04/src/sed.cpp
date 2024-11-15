@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:58:23 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/15 10:06:56 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/15 23:08:52 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ void read_file(std::string filename, std::string s1, std::string s2)
         file.close();
         replaced.close();
         return;
+    }
+    if (s1.length() == 0 || (s2.length()) == 0)
+    {
+        std::cerr << "s1 or s2 is empty" << std::endl;
+        file.close();
+        replaced.close();
+        return;
+    }
+    if (s1 == s2){
+        std::cerr << "s1 and s2 are the but ... check the .replace" << std::endl;
+        while(std::getline(file, buffer)){ 
+            replaced << buffer << std::endl;
+        }
     }
     while(std::getline(file, buffer))
     {        
