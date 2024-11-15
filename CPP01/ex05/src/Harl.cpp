@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 00:02:57 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/15 00:13:14 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/15 10:35:45 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
             std::cout <<  "This is unacceptable! I want to speak to the manager now." << std::endl;
         }
         void Harl::complain(std::string level){
-            
-            
+            std::string levels[4]{"DEBUG", "INFO", "WARNING", "ERROR"};
         }
         Harl::~Harl(){}
