@@ -1,6 +1,7 @@
 NAME       =	sed
 
 SRC        =	src/main.cpp 		\
+				src/sed.cpp 		\
 
 CC 		   =	c++
 
