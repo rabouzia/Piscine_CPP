@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 18:33:39 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/11/18 19:16:22 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/18 19:16:52 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef CURE_HPP
+#define CURE_HPP
 
-int main()
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
-	delete j;
-	delete i;
-	return 0;
-}
+#include "AMateria.hpp"
+
+class Cure : public AMateria {
+public:
+	Cure();
+	Cure(const Cure &other);
+	Cure &operator=(const Cure &other);
+	virtual ~Cure();
+};
+
+#endif

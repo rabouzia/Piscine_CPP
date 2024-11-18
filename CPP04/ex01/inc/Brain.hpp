@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:09:34 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 17:37:35 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:22:51 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class Brain{
 		std::string _ideas[100];
 	public:
 		Brain();
-		std::string getType();
+		Brain(const Brain &copy);
+		Brain &operator=(const Brain &copy);
 		~Brain();
 		
 

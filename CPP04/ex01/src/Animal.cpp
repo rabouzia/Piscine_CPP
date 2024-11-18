@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:15:06 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/18 16:30:00 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:23:30 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 
 Animal::Animal(const Animal &copy)
 {
-    std::cout << "🏗️ Copy Constructor 🏗️" << std::endl;   
+    std::cout << "🏗️ Animal Copy Constructor 🏗️" << std::endl;   
     this->_type = copy._type;
 }
 
@@ -40,5 +40,4 @@ void Animal::makeSound()const{
 
 Animal::~Animal(){
     std::cout << "💥 Animal is destroyed 💥" << std::endl;
-    
 }

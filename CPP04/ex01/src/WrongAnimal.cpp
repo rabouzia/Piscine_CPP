@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:33:08 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 16:33:42 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:58:19 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-    std::cout << "🏗️ Copy Constructor 🏗️" << std::endl;   
+    std::cout << "🏗️ WrongAnimal Copy Constructor 🏗️" << std::endl;   
     this->_type = copy._type;
 }
 

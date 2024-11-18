@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 18:33:39 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/11/18 19:16:54 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/18 19:17:22 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
 
-int main()
-{
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+#include "AMateria.hpp"
+
+class Ice : public AMateria {
 	
-	delete j;
-	delete i;
-	return 0;
-}
+	public:
+		Ice();
+		Ice(const Ice &other);
+		Ice &operator=(const Ice &other);
+		virtual ~Ice();
+
+};
+
+#endif

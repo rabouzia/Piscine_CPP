@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:34:29 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 16:37:57 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/18 17:58:26 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ WrongCat::WrongCat(){
 }
  
 WrongCat::WrongCat(const WrongCat &copy){
-    std::cout << "🏗️ Copy Constructor 🏗️" << std::endl;   
+    std::cout << "🏗️ WrongCat Copy Constructor 🏗️" << std::endl;   
     this->_type = copy._type;
 }
 

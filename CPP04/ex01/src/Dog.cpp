@@ -6,7 +6,7 @@
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:14:50 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/18 16:16:20 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:23:43 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 
 Dog::Dog(){
+	this->burainu = new Brain();
     std::cout << "🏗️ Dog Constructor 🏗️" << std::endl;   
 }
  
 Dog::Dog(const Dog &copy){
-    std::cout << "🏗️ Copy Constructor 🏗️" << std::endl;   
+	this->burainu = copy.burainu;
+    std::cout << "🏗️ Dog Copy Constructor 🏗️" << std::endl;   
     this->_type = copy._type;
 }
 
@@ -38,4 +40,5 @@ std::string Dog::getType(void)const{
 
 Dog::~Dog(){
     std::cout << "💥 Dog is destroyed 💥" << std::endl;
+	delete this->burainu;
 }
