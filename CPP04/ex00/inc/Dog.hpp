@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:13:39 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/18 10:14:00 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/18 16:16:02 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class Dog : public Animal
         Dog();
         Dog(const Dog &copy);
         Dog &operator=(const Dog &copy);
-        virtual ~Dog();
+        std::string getType(void)const;
         void makeSound() const;
+        virtual ~Dog();
 };
 
 #endif

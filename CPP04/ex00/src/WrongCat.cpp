@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 10:14:50 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/18 16:16:20 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/11/18 16:34:29 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/18 16:37:57 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-
-Dog::Dog(){
-    std::cout << "🏗️ Dog Constructor 🏗️" << std::endl;   
+WrongCat::WrongCat(){
+    std::cout << "🏗️ WrongCat Constructor 🏗️" << std::endl;   
 }
  
-Dog::Dog(const Dog &copy){
+WrongCat::WrongCat(const WrongCat &copy){
     std::cout << "🏗️ Copy Constructor 🏗️" << std::endl;   
     this->_type = copy._type;
 }
 
-Dog &Dog::operator=(const Dog &copy){
+WrongCat &WrongCat::operator=(const WrongCat &copy){
     if (this == &copy)
         return *this;
     this->_type = copy._type;
     return *this;
 }
-void Dog::makeSound() const{
-    std::cout << "Waff waff" << std::endl; 
+void WrongCat::makeSound() const{
+    std::cout << "cotcotcotcot" << std::endl; 
 }
 
-std::string Dog::getType(void)const{
+std::string WrongCat::getType(void)const{
     return _type;
 }
 
-Dog::~Dog(){
-    std::cout << "💥 Dog is destroyed 💥" << std::endl;
+WrongCat::~WrongCat(){
+    std::cout << "💥 WrongCat is destroyed 💥" << std::endl;
+    
 }
