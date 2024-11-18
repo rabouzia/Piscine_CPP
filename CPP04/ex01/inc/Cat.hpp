@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 17:17:12 by rabouzia         ###   ########.fr       */
+/*   Created: 2024/11/18 10:14:26 by ramzerk           #+#    #+#             */
+/*   Updated: 2024/11/18 17:23:15 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Cat : public Animal, public Brain
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-	return 0;
-}
+	private:
+		Brain * burainu;
+    public:
+        Cat();
+        Cat(const Cat &copy);
+        Cat &operator=(const Cat &copy);
+        std::string getType(void)const;
+        void makeSound() const;
+        virtual ~Cat();
+};
+
+#endif

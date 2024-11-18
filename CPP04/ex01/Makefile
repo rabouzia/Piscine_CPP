@@ -1,11 +1,13 @@
-NAME       =	phonebook
+NAME       =	Animal
 
 SRC        =	src/main.cpp 		\
-				src/phonebook.cpp 	\
-				src/setters.cpp 	\
-				src/getters.cpp		\
-				src/add.cpp			
-
+				src/Animal.cpp		\
+				src/Dog.cpp			\
+				src/Cat.cpp			\
+				src/WrongAnimal.cpp			\
+				src/WrongCat.cpp			\
+				src/Brain.cpp			\
+			
 CC 		   =	c++
 
 CFLAGS 	   =	-Wall -Wextra -Werror -std=c++98 -I./inc 
@@ -35,11 +37,11 @@ $(OBJ_DIR)%.o:  src/%.cpp
 
 clean:
 				@rm -rf $(OBJ_DIR) $(DEP)
-				@echo "\033[1;31m======== philo object files removed ========\033[0m"
+				@echo "\033[1;31m======== Animal object files removed ========\033[0m"
 
 fclean:         clean
 				@$(RM) $(NAME)
-				@echo "\033[1;31m======= philo executable removed =======\033[0m"
+				@echo "\033[1;31m======= Animal executable removed =======\033[0m"
 
 re:             fclean all
 
