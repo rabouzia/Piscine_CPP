@@ -1,28 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 19:16:54 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 19:17:22 by rabouzia         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef ICE_HPP
-#define ICE_HPP
+# define ICE_HPP
 
-#include "AMateria.hpp"
+# include <iostream>
+# include <string>
 
-class Ice : public AMateria {
-	
+class Ice
+{
+
+	private:
+		std::string _type;
+
 	public:
+
 		Ice();
-		Ice(const Ice &other);
-		Ice &operator=(const Ice &other);
-		virtual ~Ice();
+		Ice( Ice const & src );
+		~Ice();
+
+		Ice &		operator=( Ice const & rhs );
+		void setType(std::string type);
+		std::string getType(void);
 
 };
 
-#endif
+std::ostream &			operator<<( std::ostream & o, Ice const & i );
+
+#endif /* ************************************************************* ICE_H */

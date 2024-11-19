@@ -1,29 +1,27 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:05:48 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 19:14:59 by rabouzia         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+# define AMATERIA_HPP
 
-#include <string>
+# include <iostream>
+# include <string>
 
-class AMateria {
+class AMateria
+{
 	
 	protected:
-		std::string type;
+		
 
 	public:
-		std::string const & getType() const; 
+
+		AMateria();
+		AMateria( AMateria const & src );
+		~AMateria();
+		AMateria &		operator=( AMateria const & rhs );
+
+		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
 
-#endif
+std::ostream &			operator<<( std::ostream & o, AMateria const & i );
+
+#endif /* ******************************************************** AMATERIA_H */

@@ -1,26 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 19:16:22 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 19:16:52 by rabouzia         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CURE_HPP
-#define CURE_HPP
+# define CURE_HPP
 
-#include "AMateria.hpp"
+# include <iostream>
+# include <string>
 
-class Cure : public AMateria {
-public:
-	Cure();
-	Cure(const Cure &other);
-	Cure &operator=(const Cure &other);
-	virtual ~Cure();
+class Cure
+{
+	private:
+		std::string _type;
+
+	public:
+
+		Cure();
+		Cure( Cure const & src );
+		~Cure();
+
+		Cure &		operator=( Cure const & rhs );
+		void setType(std::string type);
+		std::string getType(void);
+
+	private:
+
 };
 
-#endif
+std::ostream &			operator<<( std::ostream & o, Cure const & i );
+
+#endif /* ************************************************************ CURE_H */
