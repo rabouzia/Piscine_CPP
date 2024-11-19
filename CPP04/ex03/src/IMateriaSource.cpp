@@ -45,6 +45,10 @@ std::ostream &			operator<<( std::ostream & o, IMateriaSource const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+void IMateriaSource::learnMateria(AMateria*){
+	
+}
+
 
 
 /*

@@ -3,8 +3,9 @@
 
 # include <iostream>
 # include <string>
+#include "AMateria.hpp"
 
-class Ice
+class Ice : public AMateria
 {
 
 	private:

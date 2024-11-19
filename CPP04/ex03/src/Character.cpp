@@ -1,16 +1,14 @@
-#include "Ice.hpp"
+#include "Character.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Ice::Ice()
+Character::Character()
 {
-	std::cout << "🏗️ Ice Constructor 🏗️" << std::endl;
-
 }
 
-Ice::Ice( const Ice & src )
+Character::Character( const Character & src )
 {
 }
 
@@ -19,10 +17,8 @@ Ice::Ice( const Ice & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Ice::~Ice()
+Character::~Character()
 {
-	std::cout << "💥 Ice is destroyed 💥" << std::endl;
-
 }
 
 
@@ -30,7 +26,7 @@ Ice::~Ice()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Ice &				Ice::operator=( Ice const & rhs )
+Character &				Character::operator=( Character const & rhs )
 {
 	//if ( this != &rhs )
 	//{
@@ -39,7 +35,7 @@ Ice &				Ice::operator=( Ice const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Ice const & i )
+std::ostream &			operator<<( std::ostream & o, Character const & i )
 {
 	//o << "Value = " << i.getValue();
 	return o;

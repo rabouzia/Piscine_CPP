@@ -6,6 +6,8 @@
 
 Cure::Cure()
 {
+	std::cout << "🏗️ Cure Constructor 🏗️" << std::endl;
+
 }
 
 Cure::Cure( const Cure & src )
@@ -19,6 +21,7 @@ Cure::Cure( const Cure & src )
 
 Cure::~Cure()
 {
+	std::cout << "💥 Cure is destroyed 💥" << std::endl;
 }
 
 

@@ -4,6 +4,8 @@
 # include <iostream>
 # include <string>
 
+class AMateria;
+
 class IMateriaSource
 {
 
@@ -12,7 +14,7 @@ class IMateriaSource
 		IMateriaSource();
 		IMateriaSource( IMateriaSource const & src );
 		~IMateriaSource();
-
+		virtual void learnMateria(AMateria*) = 0;
 		IMateriaSource &		operator=( IMateriaSource const & rhs );
 
 	private:

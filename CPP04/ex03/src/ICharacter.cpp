@@ -6,6 +6,7 @@
 
 ICharacter::ICharacter()
 {
+	std::cout << "🏗️ ICharacter Constructor 🏗️" << std::endl;
 }
 
 ICharacter::ICharacter( const ICharacter & src )
@@ -19,6 +20,7 @@ ICharacter::ICharacter( const ICharacter & src )
 
 ICharacter::~ICharacter()
 {
+	std::cout << "💥 Character is destroyed 💥" << std::endl;
 }
 
 
