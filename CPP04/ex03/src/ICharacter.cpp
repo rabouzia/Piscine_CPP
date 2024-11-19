@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 13:50:26 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/19 14:21:43 by rabouzia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ICharacter.hpp"
 
 /*
@@ -20,7 +32,7 @@ ICharacter::ICharacter( const ICharacter & src )
 
 ICharacter::~ICharacter()
 {
-	std::cout << "💥 Character is destroyed 💥" << std::endl;
+	std::cout << "💥 ICharacter is destroyed 💥" << std::endl;
 }
 
 

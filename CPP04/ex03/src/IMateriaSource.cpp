@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 13:50:30 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/19 17:06:20 by rabouzia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "IMateriaSource.hpp"
 
 /*
@@ -6,10 +18,14 @@
 
 IMateriaSource::IMateriaSource()
 {
+	std::cout << "🏗️ IMateriaSource Constructor 🏗️" << std::endl;
+
 }
 
-IMateriaSource::IMateriaSource( const IMateriaSource & src )
+IMateriaSource::IMateriaSource(const IMateriaSource& copy)
 {
+	std::cout << "🏗️ IMateriaSource Copy Constructor 🏗️" << std::endl;
+
 }
 
 
@@ -19,6 +35,8 @@ IMateriaSource::IMateriaSource( const IMateriaSource & src )
 
 IMateriaSource::~IMateriaSource()
 {
+	std::cout << "💥 IMateriaSource is destroyed 💥" << std::endl;
+
 }
 
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 13:50:34 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/19 22:35:22 by rabouzia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "MateriaSource.hpp"
 
 /*
@@ -6,10 +18,48 @@
 
 MateriaSource::MateriaSource()
 {
+	std::cout << "🏗️ MateriaSource Constructor 🏗️" << std::endl;
 }
 
 MateriaSource::MateriaSource( const MateriaSource & src )
 {
+}
+
+AMateria* MateriaSource::createMateria(std::string const & type){
+	AMateria	*materia;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (_slot[i] && _slot[i]->getType() == type)
+			return (_slot[i]->clone());
+	}
+	return NULL;
+	// AMateria *mater = new AMateria(type);
+	/*
+	int i = 0;
+	
+	while (i < 4) {
+		if (this->_storage[i] != NULL) {
+			if (this->_storage[i]->getType() == type) {
+				std::cout << "createMateria create a Materia with type " << type << std::endl;
+				return this->_storage[i]->clone();
+			}
+		}
+		i++;
+	}
+	std::cout << "createMateria can't create a Materia with type " << type << "!! Not learn." << std::endl;
+	return NULL;
+	*/
+}
+
+
+void MateriaSource::learnMateria(AMateria* spell){
+	for (int i = 0; i < 4; i++){
+		if (!_slot[i]){
+			_slot[i] = spell;		
+			break;
+		}
+	}
 }
 
 
@@ -19,6 +69,8 @@ MateriaSource::MateriaSource( const MateriaSource & src )
 
 MateriaSource::~MateriaSource()
 {
+	std::cout << "💥 MateriaSource is destroyed 💥" << std::endl;
+
 }
 
 

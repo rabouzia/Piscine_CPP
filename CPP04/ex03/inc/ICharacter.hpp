@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 13:50:07 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/19 16:53:33 by rabouzia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
@@ -14,7 +26,6 @@ class ICharacter
 		ICharacter &		operator=( ICharacter const & rhs );
 		virtual ~ICharacter() {}
 
-		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;

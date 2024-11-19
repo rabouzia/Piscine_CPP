@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 13:50:21 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/11/19 17:46:52 by rabouzia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cure.hpp"
 
 /*
@@ -7,13 +19,22 @@
 Cure::Cure()
 {
 	std::cout << "🏗️ Cure Constructor 🏗️" << std::endl;
-
+	_type = "cure";
 }
 
 Cure::Cure( const Cure & src )
 {
 }
 
+void Cure::setType(std::string namu){
+	_type = namu;
+}
+
+
+AMateria* Cure::clone() const{
+	AMateria *b  = new Cure();
+	return (b);		
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
