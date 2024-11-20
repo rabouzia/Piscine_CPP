@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:34 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 22:35:22 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:17:03 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "all.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------

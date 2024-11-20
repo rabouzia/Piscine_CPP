@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:18 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:37:57 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:01:18 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "all.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -73,13 +73,35 @@ void Character::equip(AMateria* m){
 
 }
 
-void Character::unequip(int idx){
+void Character::unequip(int i){
+	if (!get_slot(i))
+		return;
+	std::cout << "*Unequips " << _slots[i]->getType() << " that was slot" << i << std::endl;
+	  _slots[i] = NULL;
+}
 
+bool Character::get_slot(int i)
+{
+	if (i < 0 || i >= 4){	 
+		std::cout << i << "invalid slot " << std::endl;
+		return (false);
+	}
+	if (this->_slots[i] == NULL){
+		std::cout << "slot is empty" << std::endl;
+		return (false);
+	}
+	return true;
 }
 
 void Character::use(int idx, ICharacter& target){
 
 }
+void Character::display_inventory(){
+	
+	
+}
+
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

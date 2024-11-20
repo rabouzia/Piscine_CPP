@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:00 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:04:53 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:15:38 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-# include <iostream>
-# include <string>
-
+#include "all.hpp"
 class AMateria
 {
 	

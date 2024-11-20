@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:37:26 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 10:41:29 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-# include <iostream>
-# include <string>
+#include "all.hpp"
 
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
@@ -36,8 +33,10 @@ class Character : public ICharacter
 
 		std::string const & getName() const;
 		void equip(AMateria* m);
+		bool get_slot(int i);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void display_inventory();
 
 	private:
 

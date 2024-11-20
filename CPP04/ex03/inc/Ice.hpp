@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:49:41 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:35:27 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:16:18 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 # define ICE_HPP
 
-# include <iostream>
-# include <string>
-#include "AMateria.hpp"
+#include "all.hpp"
+
+
 
 class Ice : public AMateria
 {
@@ -30,6 +30,7 @@ class Ice : public AMateria
 		~Ice();
 		Ice &		operator=( Ice const & rhs );
 		AMateria* clone() const;
+		void use(ICharacter &target);
 		void setType(std::string type);
 		std::string getType(void);
 

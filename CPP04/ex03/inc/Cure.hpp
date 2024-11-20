@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:49:46 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:45:39 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:16:22 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
 # define CURE_HPP
 
-
-#include "AMateria.hpp"
-# include <iostream>
-# include <string>
+#include "all.hpp"
 
 class Cure : public AMateria
 {

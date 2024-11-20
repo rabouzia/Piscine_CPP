@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:23 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:35:37 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:16:54 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "all.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -24,6 +24,7 @@ Ice::Ice()
 
 Ice::Ice( const Ice & src )
 {
+	*this = src;
 }
 AMateria* Ice::clone() const{
 	AMateria *b  = new Ice();
@@ -38,6 +39,11 @@ Ice::~Ice()
 {
 	std::cout << "💥 Ice is destroyed 💥" << std::endl;
 
+}
+
+void Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 

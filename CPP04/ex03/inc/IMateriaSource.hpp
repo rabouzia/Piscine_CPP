@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:13 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/19 17:52:14 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/20 08:16:10 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
-# include <iostream>
-# include <string>
+#include "all.hpp"
+
 
 class AMateria;
 
