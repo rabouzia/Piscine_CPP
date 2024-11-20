@@ -3,32 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:23 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 08:16:54 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/20 19:27:40 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "all.hpp"
+#include "Ice.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Ice::Ice()
+Ice::Ice() : AMateria ()
 {
 	std::cout << "🏗️ Ice Constructor 🏗️" << std::endl;
-
+	_type = "ice";
+	std::cout << _type << std :: endl;
 }
 
-Ice::Ice( const Ice & src )
+Ice::Ice(std::string _type){
+	this->_type = _type;
+}
+
+Ice::Ice( const Ice &src )
 {
 	*this = src;
+	_type = src.getType();
 }
-AMateria* Ice::clone() const{
-	AMateria *b  = new Ice();
-	return(b );		
+Ice *Ice::clone() const{
+	return(new Ice(*this));		
 }
 
 /*
@@ -51,19 +56,13 @@ void Ice::use(ICharacter &target)
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Ice &				Ice::operator=( Ice const & rhs )
+Ice &				Ice::operator=( Ice const &rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+	}
 	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, Ice const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
 }
 
 

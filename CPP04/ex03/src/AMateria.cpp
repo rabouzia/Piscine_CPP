@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:16 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 08:16:46 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/20 19:22:14 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "all.hpp"
+#include "AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -19,11 +19,12 @@
 AMateria::AMateria()
 {
 	std::cout << "🏗️ AMateria Constructor 🏗️" << std::endl;
-
+	
 }
 
-AMateria::AMateria( const AMateria & src )
+AMateria::AMateria( const AMateria &src )
 {
+	*this = src;
 }
 
 
@@ -44,20 +45,16 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AMateria &				AMateria::operator=( AMateria const & rhs )
+AMateria &				AMateria::operator=( AMateria const &from )
 {
 	//if ( this != &rhs )
 	//{
 		//this->_value = rhs.getValue();
 	//}
+	this->_type = from._type;
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, AMateria const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
 
 
 /*
@@ -68,6 +65,11 @@ std::ostream &			operator<<( std::ostream & o, AMateria const & i )
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+const std::string &AMateria::getType(void) const{
+	std::cout << _type << std :: endl;
+	return (_type);
+}
 
 
 /* ************************************************************************** */

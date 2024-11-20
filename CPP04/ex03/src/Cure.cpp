@@ -3,38 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:21 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 08:16:52 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/20 19:28:53 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "all.hpp"
+#include "Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cure::Cure()
+Cure::Cure() : AMateria()
 {
 	std::cout << "🏗️ Cure Constructor 🏗️" << std::endl;
 	_type = "cure";
 }
 
-Cure::Cure( const Cure & src )
+Cure::Cure(std::string type){
+	this->_type = type;
+}
+
+Cure::Cure( const Cure &src )
 {
+	this->_type = src._type;
 }
 
-void Cure::setType(std::string namu){
-	_type = namu;
-}
-
-
-AMateria* Cure::clone() const{
-	AMateria *b  = new Cure();
-	return (b);		
-}
+// std::string Cure::getType(void){
+// 	return(_type);
+// }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -45,24 +44,26 @@ Cure::~Cure()
 	std::cout << "💥 Cure is destroyed 💥" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cure &				Cure::operator=( Cure const & rhs )
+Cure &				Cure::operator=( Cure const &rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+	}
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Cure const & i )
+Cure* Cure::clone() const
 {
-	//o << "Value = " << i.getValue();
-	return o;
+	return (new Cure());
+}
+
+void Cure::use(ICharacter &target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 

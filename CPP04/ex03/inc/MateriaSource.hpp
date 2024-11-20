@@ -3,37 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:10 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 08:16:06 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/20 18:00:14 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
 
-#include "all.hpp"
+#include "IMateriaSource.hpp"
+# include <iostream>
 
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria *_slot[4];
+		AMateria *_slots[4];
+		std::string _name;
 		
 	public:
 
 		MateriaSource();
-		MateriaSource( MateriaSource const & src );
+		MateriaSource(std::string name);
+		MateriaSource( MateriaSource const &src );
 		void learnMateria(AMateria*);
-		AMateria* createMateria(std::string const & type);
+		AMateria* createMateria(std::string const &type);
 
 		~MateriaSource();
 
-		MateriaSource &		operator=( MateriaSource const & rhs );
+		MateriaSource &		operator=( MateriaSource const &rhs );
 
 
 };
 
-std::ostream &			operator<<( std::ostream & o, MateriaSource const & i );
 
 #endif /* *************************************************** MATERIASOURCE_H */
