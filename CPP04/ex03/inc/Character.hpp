@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 18:00:14 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/21 11:43:44 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,16 @@ class Character : public ICharacter
 
 		Character();
 		Character( Character const &src );
-		~Character();
-		Character(std::string name);
 		Character &		operator=( Character const &rhs );
+		~Character();
+		
+		Character(std::string name);
 		std::string const &getName() const;
 		void equip(AMateria* m);
 		bool get_slot(int i);
 		void unequip(int idx);
 		void use(int idx, ICharacter &target);
+		void empty_inventory();
 		void display_inventory();
 
 	private:

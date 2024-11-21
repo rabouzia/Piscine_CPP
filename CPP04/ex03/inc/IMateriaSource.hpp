@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:13 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/20 18:00:14 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/21 10:35:36 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ class IMateriaSource
 
 };
 
-std::ostream &			operator<<( std::ostream &o, IMateriaSource const &i );
 
 #endif /* ************************************************** IMATERIASOURCE_H */
