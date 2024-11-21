@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:09:34 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/18 18:22:51 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:44:36 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 class Brain{
 
-	protected:
-		std::string _ideas[100];
 	public:
+		std::string _ideas[100];
 		Brain();
 		Brain(const Brain &copy);
 		Brain &operator=(const Brain &copy);

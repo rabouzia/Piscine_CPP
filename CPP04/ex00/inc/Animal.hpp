@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:14:07 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/18 16:23:16 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/11/21 10:26:43 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class Animal
         std::string _type;
 
     public:
-        Animal();
-        Animal(const Animal &copy);
-        Animal &operator=(const Animal &copy);
+        Animal(); //Default constructor
+        Animal(const Animal &copy); // Copy constructor
+        Animal &operator=(const Animal &copy); //Copy assignment operator
         virtual std::string getType(void)const;
         virtual void makeSound()const;
-        virtual ~Animal();
+        virtual ~Animal(); //Destructor
 };
 
 #endif
