@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:18 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/21 12:17:01 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/21 21:44:34 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,7 @@ bool Character::get_slot(int i)
 void Character::use(int i, ICharacter &target){
 	if (get_slot(i) == false)
 		return;
-		std::cout << "Using " << this->_slots[i]->getType()
-		<< " stored in slot " << i << "!" << std::endl;
+	std::cout << "Using " << this->_slots[i]->getType() << " stored in slot " << i << "!" << std::endl;
 	this->_slots[i]->use(target);
 
 }

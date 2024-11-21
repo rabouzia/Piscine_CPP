@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 08:47:12 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/21 12:36:18 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/21 22:11:14 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int main()
 	player_1.display_inventory();
 	player_1.empty_inventory();	
 	player_1.display_inventory();
+
+
 
 	std::cout << "-------------------------TEST 2-------------------------" << std::endl;
 	Character		player_2("Jack");
@@ -107,12 +109,15 @@ int main()
 	
 	materia_source_2 = materia_source_1;
 
-	delete cure_mat_source;
+	// delete cure_mat_source;
 	
 	std::cout << "----------------------SUBJECT TEST----------------------" << std::endl;
 	  IMateriaSource *src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
+	
+	Ice *cold = new Ice();
+	Cure *potion = new Cure();
+    src->learnMateria(cold);
+    src->learnMateria(potion);
     ICharacter *me = new Character("me");
     AMateria *tmp;
     tmp = src->createMateria("ice");
@@ -125,4 +130,17 @@ int main()
     delete bob;
     delete me;
     delete src;
+	delete cure_1;
+	delete ice_1;
+	delete cure_2;
+	delete ice_2;
+	delete cure_3;
+	delete ice_5;
+	// delete cold;
+	// delete potion;
+
+	
+	// delete cure_4;
+	// delete ice_4;
+	// delete cure_5;
 }

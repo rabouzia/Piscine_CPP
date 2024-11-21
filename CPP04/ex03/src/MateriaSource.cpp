@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:50:34 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/21 12:34:23 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/21 22:10:32 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,13 @@ void MateriaSource::learnMateria(AMateria* spell){
 	}
 }
 
-MateriaSource::~MateriaSource(){}
+MateriaSource::~MateriaSource(){
+	for (int i = 0; i < 4; i++){
+		if (_slots[i]){	
+			delete _slots[i];
+		}	
+	}
+}
 
 MateriaSource&	MateriaSource::operator=( MateriaSource const &rhs ){
 	
