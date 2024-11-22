@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:32:14 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/19 09:36:24 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/22 09:51:27 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ class BureauCrat
 {
 	private:
 		const std::string _name;
+		const unsigned int _grade;
 
 	public:
 
-		BureauCrat();
-		BureauCrat( BureauCrat const & src );
-		BureauCrat &		operator=( BureauCrat const & rhs );
-		~BureauCrat();
+		BureauCrat ();
+		BureauCrat (BureauCrat const &src);
+		BureauCrat& operator=(BureauCrat const &rhs);
+		~BureauCrat ();
 
 		int getGrade();
 		std::string getName();
+		
 };
 
-std::ostream &			operator<<( std::ostream & o, BureauCrat const & i );
-
-#endif /* ****************************************************** BUREAUCRAT_H */
+#endif
