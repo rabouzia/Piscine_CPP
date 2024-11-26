@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:32:14 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/22 09:51:27 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/26 08:26:02 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 # include <iostream>
 # include <string>
+#include <stdexcept>
 
 class BureauCrat
 {
 	private:
-		const std::string _name;
-		const unsigned int _grade;
 
+		static const int lowestGrade = 1;
+		static const int highestGrade = 150;
+
+		const std::string _name;
+		unsigned int _grade;
+		
 	public:
 
 		BureauCrat ();
@@ -31,7 +36,21 @@ class BureauCrat
 
 		int getGrade();
 		std::string getName();
+
+		void incrementGrade();
+		void decrementGrade();
+		
+		class GradeTooHighExecption: public std::exception{
+			public:
+				virtual const char * what() const throw();
+		};
+		class GradeTooLowExecption: public std::exception{
+			public:
+				virtual const char * what() const throw();
+		};
 		
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif

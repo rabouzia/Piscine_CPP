@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:32:27 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/22 10:26:51 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/26 08:48:12 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,26 @@ BureauCrat::BureauCrat( const BureauCrat & src ){}
 
 BureauCrat::~BureauCrat(){}
 
-BureauCrat& BureauCrat::operator=( BureauCrat const & rhs ){
-	return NULL;
+BureauCrat& BureauCrat::operator=( BureauCrat const & other ){
+	if (this == &other)
+		return *this;
+	_grade = other._grade;
+	*const_cast<std::string*>(&_name) = other._name;
+	return *this;
 }
 
-int BureauCrat::getGrade(){
-	try{
-		if(_grade < 1)
-			throw "neg";
-		if(_grade > 150)
-			throw "big";			
-	}
-	catch(const std::exception& e){
-		std::cerr << e.what() << '\n';
-	}
-	
+std::string BureauCrat::getName(){return _name;}
+
+int BureauCrat::getGrade(){return _grade;}
+
+void BureauCrat::incrementGrade(){
+	if (_grade == highestGrade)
+		throw BureauCrat::GradeTooHighExecption();
+	--_grade;
 }
 
-std::string getName(){}
+void BureauCrat::decrementGrade(){
+	if (_grade == lowestGrade)
+		throw BureauCrat::GradeTooLowExecption();
+	++_grade;
+}
