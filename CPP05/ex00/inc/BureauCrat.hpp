@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BureauCrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 09:32:14 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/11/26 08:26:02 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:57:35 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,28 @@ class BureauCrat
 
 		BureauCrat ();
 		BureauCrat (BureauCrat const &src);
+		BureauCrat(std::string name, int grade);
 		BureauCrat& operator=(BureauCrat const &rhs);
 		~BureauCrat ();
 
-		int getGrade();
-		std::string getName();
+		int getGrade () const;
+		std::string getName() const;
 
 		void incrementGrade();
 		void decrementGrade();
 		
-		class GradeTooHighExecption: public std::exception{
-			public:
-				virtual const char * what() const throw();
-		};
-		class GradeTooLowExecption: public std::exception{
+		class GradeTooHighExecption: public std::exception {
 			public:
 				virtual const char * what() const throw();
 		};
 		
+		class GradeTooLowExecption: public std::exception {
+			public:
+			virtual	const char * what() const throw();
+		};
+
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
+std::ostream& operator<<(std::ostream& os, const BureauCrat& bureaucrat);
 
 #endif
