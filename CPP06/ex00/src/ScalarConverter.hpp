@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:05:48 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/28 10:50:12 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/12/01 21:02:29 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#pragma once
 #ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
-#include <string>
-#include <cmath>
-#include <cstdlib>
-#include <iomanip>
-#include <iostream>
-#include <limits>
-#include <sstream>
-#include <vector>
+#define SCALARCONVERTER_HPP
+#include <sstream> 
 
+#include <iostream>
+#include <iomanip>
+#include <climits>
+#include <string>
+#include <cstdlib>
+#include <sstream>
+#include <cmath>
 
 class ScalarConverter
 {
-	private:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &source);
-		ScalarConverter &operator=(const ScalarConverter &source);
-
-	public:
-		~ScalarConverter();
-
-		static void convert(const std::string input);
+    private:
+            ScalarConverter();
+            ScalarConverter(const ScalarConverter &scalar);
+            ~ScalarConverter();
+            ScalarConverter &operator=(const ScalarConverter &scalar);
+    public:
+            static void convert(std::string &str);
 };
+
 
 #endif
