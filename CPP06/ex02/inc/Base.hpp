@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:05:48 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/12/04 10:46:38 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/12/04 10:51:19 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
-# include <string>
-# include <stdint.h>
+#pragma once
+#ifndef BASE_HPP
+#define BASE_HPP
 
-class Data;
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-class Serializer
+class Base
 {
-	private:
-		Serializer();
-		Serializer(const Serializer &source);
-		Serializer &operator=(const Serializer &source);
-		~Serializer();
+    public:
+            Base(){};
+            virtual ~Base(){};
+};
 
-	public:
-		static uintptr_t serialize(Data *ptr);
-        static Data* deserialize(uintptr_t raw);
+class A : public Base
+{
+    public:
+            A(){};
+            ~A(){};
+};
+
+class B : public Base
+{
+    public:
+            B(){};
+            ~B(){};
+};
+
+class C : public Base
+{
+    public:
+            C(){};
+            ~C(){};
 };
 
 #endif

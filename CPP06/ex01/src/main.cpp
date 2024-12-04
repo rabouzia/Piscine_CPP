@@ -6,40 +6,27 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/11/28 10:52:29 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/12/04 10:50:15 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Data.hpp"
 #include "Serializer.hpp"
 
-static void print_data(Data* data) {
-	if (!data) {
-		std::cout << "Null pointer" << std::endl;
-		return;
-	}
-	std::cout << "Data (" << data << ")" << std::endl;
-	std::cout << "Name: " << data->name << std::endl;
-	std::cout << "Age : " << data->age << std::endl;
-}
-
-int main()
+int main ()
 {
-	Data test_data = {"Victor", 20};
+    Data *d0 = new Data;
+    Data *d1 = new Data("test");
 
-	std::cout << "Before serialization" << std::endl;
-	print_data(&test_data);
+    std::cout << "Value of d0 : " << d0 << std::endl;
+    std::cout << "Result from functions : " << Serializer::serialize(d0) << std::endl;
+	std::cout << "Result from functions : " << Serializer::deserialize(Serializer::serialize(d0)) << std::endl;
+    
+    std::cout << "Value of d1 : " << d1 << std::endl;
+    std::cout << "Result from functions : " << Serializer::serialize(d1) << std::endl;
+    std::cout << "Result from functions : " << Serializer::deserialize(Serializer::serialize(d1)) << std::endl;
 
-	std::cout << std::endl;
-
-	uintptr_t serialized = Serializer::serialize(&test_data);
-	std::cout << "Serialized: " << serialized << std::endl;
-	
-	std::cout << std::endl;
-
-	Data* deserialized = Serializer::deserialize(serialized);
-	std::cout << "After deserialization" << std::endl;
-	print_data(deserialized);
-
-	return 0;
+    delete d0;
+    delete d1;
 }

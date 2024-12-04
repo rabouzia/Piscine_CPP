@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:05:48 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/12/04 10:46:38 by ramzerk          ###   ########.fr       */
+/*   Created: 2024/12/04 10:42:40 by ramzerk           #+#    #+#             */
+/*   Updated: 2024/12/04 10:43:35 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
-# include <string>
-# include <stdint.h>
+#include "Data.hpp"
 
-class Data;
+Data::Data():
+    _name("default")
+{}
 
-class Serializer
+Data::Data(const std::string &name):
+    _name(name)
+{}
+
+Data::Data(const Data &data)
 {
-	private:
-		Serializer();
-		Serializer(const Serializer &source);
-		Serializer &operator=(const Serializer &source);
-		~Serializer();
+    *this = data;
+}
 
-	public:
-		static uintptr_t serialize(Data *ptr);
-        static Data* deserialize(uintptr_t raw);
-};
+Data::~Data()
+{}
 
-#endif
+Data &Data::operator=(const Data &data)
+{
+    _name = data.getName();
+    return (*this);
+}
+
+const std::string &Data::getName() const
+{
+    return (_name);
+}
