@@ -3,32 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 20:44:39 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/12/01 22:11:30 by rabouzia         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:40:58 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include <cmath>
 
-void printImpossible()
-{
-    std::cout << "char : impossible" << std::endl;
-    std::cout << "int : impossible" << std::endl;
-    std::cout << "float : impossible" << std::endl;
-    std::cout << "double : impossible" << std::endl;
-}
-
-// void printChar(char c)
-// {
-	
-// 	else
-// 		std::cout << "char: " << c << std::endl;
-// }
-
-bool isPseudoLiteral(std::string &str)
+static bool isPseudoLiteral(std::string &str)
 {
     if (str == "nan" || str == "nanf")
     {
@@ -56,41 +41,52 @@ bool isPseudoLiteral(std::string &str)
     return (1);
 }
 
-void displayChar(std::string &str)
+static void displayChar(std::string &str)
 {
-	// if (str.length() == 1 && !isdigit(str[0]))
-	// {
-		if (std::isprint(static_cast<unsigned char>(str[0])) == false)
-			std::cout << "char: Non Displayable" << std::endl;
-		else {
-			std::cout << "char: '" << str[0] << "'" << std::endl;
-			std::cout << "int: " << static_cast<int> (str) << std::endl;
-			std::cout << "float: " << static_cast<float> (str) << "f" << std::endl;
-			std::cout << "double: " << static_cast<double> (str)<< std::endl;
-			std::exit(0);
+	if (str.size() == 1 && !std::isdigit(str[0]))
+		std::cout << "char : " << static_cast<char>(str[0]) << std::endl;
+	else
+	{
+		int nb = std::atoi(str.c_str());
+		if (nb < 32 || nb > 126)
+        {	
+			std::cout << "char : impossible" << std::endl;
+			return;
 		}
-		// return;
-	// }
-	// std::cout << "char: impossible" << std::endl;
+		if (!std::isprint(nb))
+        {
+				std::cout << "char : Non-displayable" << std::endl;
+			return;
+		}
+		else
+		{
+			std::cout << "char : " << static_cast<char>(nb) << std::endl;
+			return;
+		}
+	}
+	return ;
 }
 
-void displayInt(std::string &str)
+
+static void displayInt(std::string &str)
 {
 	std::stringstream tab;
 	long nb;
 	tab << str;
 	tab >> nb;
-	
+
 	if (tab.fail() || nb > INT_MAX || nb < INT_MIN)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(nb) << std::endl;
 }
 
-void displayFloat(std::string &str)
+static void displayFloat(std::string &str)
 {
 	std::stringstream tab;
 	float nb;
+	
+	
 	tab << str;
 	tab >> nb;
 	
@@ -98,7 +94,7 @@ void displayFloat(std::string &str)
 		std::cout << "float: impossible";
 	else
 	{
-		std::cout << "float: " << nb;
+		std::cout << "float: " << static_cast<float>(nb);
 		if (roundf(nb) == nb)
         	std::cout << ".0" << "f";
         else
@@ -107,18 +103,20 @@ void displayFloat(std::string &str)
 	std::cout << std::endl;
 }
 
-void displayDouble(std::string &str)
+static void displayDouble(std::string &str)
 {
 	std::stringstream tab;
 	double nb;
+	nb = 0;
+	
 	tab << str;
 	tab >> nb;
 	
-	if (tab.fail())
+	if  (tab.fail())
 		std::cout << "double: impossible";
 	else
 	{
-		std::cout << "double: " << nb;
+		std::cout << "double: " << static_cast<double>(nb);
 		if (roundf(nb) == nb)
         	std::cout << ".0";
 	}
@@ -144,6 +142,8 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &scalar)
 
 void ScalarConverter::convert(std::string &str)
 {
+	if (str[str.length() - 1] == 'f')
+		str.pop_back();
     if (isPseudoLiteral(str))
         return ;
     try
