@@ -1,6 +1,6 @@
 NAME       =	array
 
-SRC        =	src/main.cpp 	\
+SRC        =	src/main.cpp \
 
 CC 		   =	c++
 
@@ -20,14 +20,18 @@ MAKE_DIR   =    mkdir -p
 
 SMAKE	   =    make --no-print-directory
 
-all:	        $(NAME)
+all:	          $(NAME)
 
 $(NAME):        $(OBJ) $(DEP)
 				@$(CC) $(CFLAGS) $(OFLAG) $(OBJ) -o $@
 				
 $(OBJ_DIR)%.o:  src/%.cpp
-			    @mkdir -p $(OBJ_DIR)
-			    @$(CC) $(CFLAGS) $(OFLAG) -c $< -o $@ 
+				@mkdir -p $(OBJ_DIR)
+				@$(CC) $(CFLAGS) $(OFLAG) -c $< -o $@ 
+
+$(OBJ_DIR)%.o:  src/%.tpp
+				@mkdir -p $(OBJ_DIR)
+				@$(CC) $(CFLAGS) $(OFLAG) -c $< -o $@ 
 
 clean:
 				@rm -rf $(OBJ_DIR) $(DEP)

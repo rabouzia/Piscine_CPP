@@ -3,62 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/12/05 11:28:09 by ramzerk          ###   ########.fr       */
+/*   Created: 2024/12/05 20:46:21 by rabouzia          #+#    #+#             */
+/*   Updated: 2024/12/05 20:47:15 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Array.hpp"
+#include "../inc/Array.hpp"
 
 int main() {
-	try {
-		std::cout << "Empty Array tests" << std::endl;
+    try {
+        // Test de la création d'un tableau vide
+        Array<int> emptyArray;
+        std::cout << "Taille de emptyArray : " << emptyArray.size() << std::endl;
 
-		Array<int> empty_array;
-		std::cout << "Empty: " << empty_array << std::endl;
+        // Test de la création d'un tableau avec un nombre d'éléments donné
+        Array<int> intArray(5);
+        std::cout << "Taille de intArray : " << intArray.size() << std::endl;
+        for (unsigned int i = 0; i < intArray.size(); i++) {
+            std::cout << "intArray[" << i << "] = " << intArray[i] << std::endl;
+        }
 
-		Array<int> copy_empty(empty_array);
-		std::cout << "Copy of empty: " << copy_empty << std::endl;
+        // Modification des valeurs du tableau
+        for (unsigned int i = 0; i < intArray.size(); i++) {
+            intArray[i] = i * 10;
+        }
+        for (unsigned int i = 0; i < intArray.size(); i++) {
+            std::cout << "intArray[" << i << "] après modification = " << intArray[i] << std::endl;
+        }
 
-		Array<int> array(10);
-		for (uint i = 0; i < array.size(); i++)
-			array[i] = i;
+        // Test de la gestion des exceptions pour les index hors limites
+        try {
+            std::cout << "Accès à intArray[10] (hors limites) : ";
+            std::cout << intArray[10] << std::endl;
+        } catch (const std::exception& e) {
+            std::cout << "Exception attrapée : " << e.what() << std::endl;
+        }
 
-		std::cout << "Basic array: " << array << std::endl;
+        // Test du constructeur de copie
+        Array<int> copyArray = intArray;
+        std::cout << "Taille de copyArray : " << copyArray.size() << std::endl;
+        for (unsigned int i = 0; i < copyArray.size(); i++) {
+            std::cout << "copyArray[" << i << "] = " << copyArray[i] << std::endl;
+        }
 
-		Array<int> copy(array);
-		std::cout << "Copy of basic: " << copy << std::endl;
+        // Modification de copyArray pour vérifier qu'il est indépendant de intArray
+        copyArray[0] = 999;
+        std::cout << "Après modification, copyArray[0] = " << copyArray[0] << std::endl;
+        std::cout << "intArray[0] = " << intArray[0] << " (doit être inchangé)" << std::endl;
 
-		const Array<int> equal = copy;
-		std::cout << "Equal operator test: " << equal << std::endl;
-		
-		Array<std::string> alphabet(26);
-		for (uint i = 0; i < alphabet.size(); i++)
-			alphabet[i] = 'a' + i;
+        // Test de l'opérateur d'assignation
+        Array<int> assignArray;
+        assignArray = intArray;
+        std::cout << "Taille de assignArray après assignation : " << assignArray.size() << std::endl;
+        for (unsigned int i = 0; i < assignArray.size(); i++) {
+            std::cout << "assignArray[" << i << "] = " << assignArray[i] << std::endl;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Une exception est survenue : " << e.what() << std::endl;
+    }
 
-		std::cout << "Alphabet: " << alphabet << std::endl;
-
-		std::cout << "Going out of range:" << std::endl;
-		std::cout << alphabet[alphabet.size()] << std::endl;
-	}
-	catch (const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
-		const Array<int> const_array(10);
-
-		std::cout << "Const array: " << const_array << std::endl;
-
-		std::cout << "Going out of range " << std::endl;
-		std::cout << const_array[const_array.size()] << std::endl;
-	}
-	catch (const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	return 0;
+    return 0;
 }
