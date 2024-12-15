@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rabouzia <rabouzia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:36:23 by ramzerk           #+#    #+#             */
-/*   Updated: 2024/12/15 16:35:05 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/12/15 21:24:03 by rabouzia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <algorithm>
 #include "Span.hpp"
 
 Span::Span() : _maxsize(0){}
@@ -41,16 +42,18 @@ int Span::shortestSpan(){
 		throw std::length_error("Span must contain at leat 2 containers");
 	
 	std::multiset<int>::const_iterator it = _container.begin();
-	unsigned int prev = *it;
-	unsigned int min = *++it - prev;
-	unsigned int current = 0;
-	while(++it != _container.end())
+	unsigned int prev = *it++;
+	unsigned int min = *it - prev;
+	
+	while(it != _container.end())
 	{
-		current = *++it - prev;
-		if (current > min)
+		unsigned int current = *it - prev;
+		if (current < min)
 			min = current;
 		prev = *it;
+		it++;
 	}
+	
 	return min;
 }
 
