@@ -6,7 +6,7 @@
 /*   By: ramzerk <ramzerk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:06:03 by rabouzia          #+#    #+#             */
-/*   Updated: 2024/12/14 10:23:45 by ramzerk          ###   ########.fr       */
+/*   Updated: 2024/12/15 16:33:55 by ramzerk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
 		std::cout << "==========================================" << std::endl;
 		Span span(15000);
 
-		for (unsigned int i = 0; i < span.max_size(); i++)
+		for (unsigned int i = 0; i < span.getMaxSize(); i++)
 			span.addNumber(rand() % 1000000);
 	
 		std::cout << "Longest span: " << span.longestSpan() << std::endl;
@@ -42,12 +42,12 @@ int main() {
 		vec.push_back(42);
 		vec.push_back(69);
 		fill_span.addNumbers(vec.begin(), vec.end());
-		std::cout << "Fill Span Max Size: " << fill_span.max_size() << " Fill Span Size: " << fill_span.size() << std::endl;
+		std::cout << "Fill Span Max Size: " << fill_span.getMaxSize() << " Fill Span Size: " << fill_span.getSize() << std::endl;
 		std::cout << "Longest span: " << fill_span.longestSpan() << std::endl;
 		std::cout << "Shortest span: " << fill_span.shortestSpan() << std::endl;
 		std::cout << "Adding 8" << std::endl;
 		fill_span.addNumber(8);
-		std::cout << "Fill Span Max Size: " << fill_span.max_size() << " Fill Span Size: " << fill_span.size() << std::endl;
+		std::cout << "Fill Span Max Size: " << fill_span.getMaxSize() << " Fill Span Size: " << fill_span.getSize() << std::endl;
 		std::cout << "Longest span: " << fill_span.longestSpan() << std::endl;
 		std::cout << "Shortest span: " << fill_span.shortestSpan() << std::endl;
 		std::cout << "Adding 8 again" << std::endl;
