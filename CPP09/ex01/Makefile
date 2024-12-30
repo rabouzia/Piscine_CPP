@@ -1,10 +1,8 @@
-NAME       =	phonebook
+NAME       =	rpn
 
 SRC        =	src/main.cpp 		\
-				src/phonebook.cpp 	\
-				src/setters.cpp 	\
-				src/getters.cpp		\
-				src/add.cpp			
+				src/RPN.cpp 	\
+			
 
 CC 		   =	c++
 
@@ -35,11 +33,11 @@ $(OBJ_DIR)%.o:  src/%.cpp
 
 clean:
 				@rm -rf $(OBJ_DIR) $(DEP)
-				@echo "\033[1;31m======== philo object files removed ========\033[0m"
+				@echo "\033[1;31m======== object files removed ========\033[0m"
 
 fclean:         clean
 				@$(RM) $(NAME)
-				@echo "\033[1;31m======= philo executable removed =======\033[0m"
+				@echo "\033[1;31m======= executable removed =======\033[0m"
 
 re:             fclean all
 
